@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+namespace:用来隔离sql语句的
+对一张表的操作的sql语句全部都封装到一个sql映射 文件。
+每一个sql语句对应一个mappedstatement对象  要给他指定惟一的id
+-->
+<mapper namespace="com.lun.mapper.TeacherMapper">
+
+
+    <select id="selectall" resultType="Teacher">
+        select  * from teacher
+    </select>
+
+    <select id="querylogin" resultType="Teacher">
+        select * from teacher where teacherid=#{teacherid} and teacherpawd=#{teacherpawd}
+    </select>
+
+
+</mapper>
